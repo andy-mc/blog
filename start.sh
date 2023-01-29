@@ -17,6 +17,8 @@ network="mynetwork"
 # run all images in parallel
 for i in "${!images[@]}"
 do
+    docker stop "${images[i]}"
+    docker rm "${images[i]}"
     docker run --name "${images[i]}" -p "${ports[i]}:${ports[i]}" --network "$network" "${images[i]}" &
 done
 
