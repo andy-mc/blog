@@ -15,4 +15,4 @@ spec:
     spec:
       containers:
       - name: posts
-        image: posts
+        image: posts:0.0.888
