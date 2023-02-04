@@ -15,4 +15,17 @@ spec:
     spec:
       containers:
       - name: posts
-        image: posts:0.0.888
+        image: quemasandy/posts
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: posts-svc
+spec:
+  selector:
+    app: posts
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 4000
+  type: LoadBalancer
