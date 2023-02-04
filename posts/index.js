@@ -18,7 +18,6 @@ const posts = {};
 
 app.get("/", async (req, res) => {
   await sleep(1000)
-  console.log('req:', JSON.stringify(req, null, 2))
   const ip = req.ip;
   const headers = req.headers
   res.send({
