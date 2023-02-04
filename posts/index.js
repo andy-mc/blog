@@ -8,7 +8,24 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+function sleep(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
 const posts = {};
+
+app.get("/", async (req, res) => {
+  await sleep(1000)
+  console.log('req:', JSON.stringify(req, null, 2))
+  const ip = req.ip;
+  const headers = req.headers
+  res.send({
+    ip,
+    headers
+  });
+});
 
 app.get("/posts", (req, res) => {
   res.send(posts);
