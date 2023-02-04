@@ -2,17 +2,17 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: posts-depl
+  name: events-depl
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: posts
+      app: events
   template:
     metadata:
       labels:
-        app: posts
+        app: events
     spec:
       containers:
-      - name: posts
-        image: quemasandy/posts
+      - name: events
+        image: quemasandy/events
