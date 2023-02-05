@@ -20,7 +20,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: 
+  name: query-cluster-ip
 spec:
   selector:
     app: query
