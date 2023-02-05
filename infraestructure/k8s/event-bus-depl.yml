@@ -27,6 +27,6 @@ spec:
     app: event-bus
   type: ClusterIP
   ports:
-  - name: event-bus-cluster-ip-port
+  - name: http
     port: 4005
     targetPort: 4005

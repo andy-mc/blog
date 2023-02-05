@@ -14,7 +14,7 @@ app.post("/events", (req, res) => {
 
   events.push(event);
 
-  axios.post("http://posts-cluster-ip/events", event).catch((err) => {
+  axios.post("http://posts-cluster-ip:4000/events", event).catch((err) => {
     console.log(err.message);
   });
   // axios.post("http://comments-cluster-ip/events", event).catch((err) => {
