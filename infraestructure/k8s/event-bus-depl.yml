@@ -2,31 +2,31 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: events-depl
+  name: event-bus-depl
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: events
+      app: event-bus
   template:
     metadata:
       labels:
-        app: events
+        app: event-bus
     spec:
       containers:
-      - name: events
-        image: quemasandy/events
+      - name: event-bus
+        image: quemasandy/event-bus
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: events-cluster-ip
+  name: event-bus-cluster-ip
 spec:
   selector:
-    app: events
+    app: event-bus
   type: ClusterIP
   ports:
-  - name: http
+  - name: event-bus-cluster-ip-port
     port: 4005
     targetPort: 4005

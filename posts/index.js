@@ -17,6 +17,8 @@ function sleep(ms) {
 const posts = {};
 
 app.get("/", async (req, res) => {
+  console.log('posts: get /')
+
   await sleep(1000)
   const ip = req.ip;
   const headers = req.headers
@@ -27,10 +29,14 @@ app.get("/", async (req, res) => {
 });
 
 app.get("/posts", (req, res) => {
+  console.log('posts: get /posts')
+
   res.send(posts);
 });
 
 app.post("/posts", async (req, res) => {
+  console.log('posts: post /posts')
+
   const id = randomBytes(4).toString("hex");
   const { title } = req.body;
 
@@ -39,8 +45,7 @@ app.post("/posts", async (req, res) => {
     title,
   };
 
-  console.log(':D')
-  await axios.post("http://events-cluster-ip/events", {
+  await axios.post("http://event-bus-cluster-ip/events", {
     type: "PostCreated",
     data: {
       id,
@@ -52,6 +57,8 @@ app.post("/posts", async (req, res) => {
 });
 
 app.post("/events", (req, res) => {
+  console.log('posts: post /events')
+
   console.log("Received Event", req.body.type);
 
   res.send({});
