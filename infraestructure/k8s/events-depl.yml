@@ -16,3 +16,17 @@ spec:
       containers:
       - name: events
         image: quemasandy/events
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: events-cluster-ip
+spec:
+  selector:
+    app: events
+  type: ClusterIP
+  ports:
+  - name: http
+    port: 4005
+    targetPort: 4005

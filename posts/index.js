@@ -39,8 +39,8 @@ app.post("/posts", async (req, res) => {
     title,
   };
 
-  console.log('http://events-cluster-ip:4005/events:')
-  await axios.post("http://events-cluster-ip:4005/events", {
+  console.log(':D')
+  await axios.post("http://events-cluster-ip/events", {
     type: "PostCreated",
     data: {
       id,

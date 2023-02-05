@@ -16,3 +16,17 @@ spec:
       containers:
       - name: posts
         image: quemasandy/posts
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: posts-cluster-ip
+spec:
+  selector:
+    app: posts
+  type: ClusterIP
+  ports:
+  - name: http
+    port: 4000
+    targetPort: 4000
