@@ -8,7 +8,7 @@ const PostCreate = () => {
     event.preventDefault();
 
     // posts service
-    await axios.post("http://kblog.com/posts", {
+    await axios.post("http://kblog.com/posts/create", {
       title,
     });
 
