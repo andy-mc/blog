@@ -10,14 +10,6 @@ spec:
     - host: kblog.com
       http:
         paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: client-cluster-ip
-                port:
-                  number: 3000
-
           - path: /posts
             pathType: Prefix
             backend:
@@ -41,3 +33,11 @@ spec:
                 name: comments-cluster-ip
                 port:
                   number: 4001
+
+          - path: /?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: client-cluster-ip
+                port:
+                  number: 3000
