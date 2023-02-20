@@ -8,7 +8,7 @@ const PostCreate = () => {
     event.preventDefault();
 
     // posts service
-    await axios.post("http://localhost:31577/posts", {
+    await axios.post("http://kblog.com/posts", {
       title,
     });
 

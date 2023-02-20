@@ -8,7 +8,7 @@ const PostList = () => {
 
   const fetchPosts = async () => {
     // query service
-    const res = await axios.get("http://localhost:31268/posts");
+    const res = await axios.get("http://kblog.com/posts");
 
     setPosts(res.data);
   };
