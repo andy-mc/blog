@@ -8,7 +8,7 @@ build:
   local:
     push: false
   artifacts:
-    - image: cygnetops/client-95
+    - image: quemasandy/client
       context: client
       docker:
         dockerfile: Dockerfile
@@ -16,7 +16,7 @@ build:
         manual:
           - src: "src/**/*.js"
             dest: .
-    - image: cygnetops/comments-84
+    - image: quemasandy/comments
       context: comments
       docker:
         dockerfile: Dockerfile
@@ -24,7 +24,7 @@ build:
         manual:
           - src: "*.js"
             dest: .
-    - image: cygnetops/event-bus-85
+    - image: quemasandy/event-bus
       context: event-bus
       docker:
         dockerfile: Dockerfile
@@ -32,7 +32,7 @@ build:
         manual:
           - src: "*.js"
             dest: .
-    - image: cygnetops/moderation-84
+    - image: quemasandy/moderation
       context: moderation
       docker:
         dockerfile: Dockerfile
@@ -40,7 +40,7 @@ build:
         manual:
           - src: "*.js"
             dest: .
-    - image: cygnetops/posts-95
+    - image: quemasandy/posts
       context: posts
       docker:
         dockerfile: Dockerfile
@@ -48,7 +48,7 @@ build:
         manual:
           - src: "*.js"
             dest: .
-    - image: cygnetops/query-84
+    - image: quemasandy/query
       context: query
       docker:
         dockerfile: Dockerfile
